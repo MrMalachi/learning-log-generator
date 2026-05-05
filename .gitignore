@@ -1,0 +1,33 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Cache Files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS Files
+.DS_Store
+
+# Environment Variables / Secrets
+.env
+secrets/
+
+# IDE/Editor Settings
+.idea/
+
+# Test/Cache Folders
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build/Package Files
+build/
+dist/
+*.egg-info/
+
+# Local Runtime Data
+data/*.json
+!data/sample_data.json
