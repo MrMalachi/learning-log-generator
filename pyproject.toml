@@ -1,0 +1,21 @@
+[project]
+# Project metadata.
+name = "learning-log-generator"
+version = "0.1.0"
+description = """
+A Python script for automating a learning log to track my programming learning journey.
+"""
+readme = "README.md"
+requires-python = ">3.10"
+authors = [
+    { name = "MrMalachi", email = "brownmnb11@yahoo.com" }
+]
+dependencies = []
+
+[project.scripts]
+# 'learning-log' runs main() function inside 'src/learning_log_generator/main.py'.
+learning-log-generator = "learning_log_generator.main:main"
+
+[tool.black]
+# Configure the Black Formatter.
+line-length = 88
