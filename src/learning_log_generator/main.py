@@ -2,6 +2,7 @@
 Entry point for 'learning_log_generator' script, acting as the top-level
 orchestrator.
 """
+
 from learning_log_generator.learning_log_generator import LearningLogGenerator
 
 
