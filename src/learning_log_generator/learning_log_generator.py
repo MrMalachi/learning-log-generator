@@ -11,11 +11,11 @@ class LearningLogGenerator:
     def __init__(self):
         """Initialize attributes."""
 
-    def main_menu(self):
+    def display_main_menu(self):
         """A neatly printed display of the learning log cli menu."""
         print(
             "\n============================================"
-            "\n          🗒️Learning Log Generator🗒️            "
+            "\n          🪵 Learning Log Generator🪵            "
             "\n============================================"
             "\n1. Create a new learning log"
             "\n2. View saved learning logs"
@@ -28,6 +28,7 @@ class LearningLogGenerator:
     def get_main_menu_choice(self):
         """Prompt user to enter a corresponding integer & return value."""
         while True:
+            self.display_main_menu()  # Redisplay menu every time if invalid input.
             try:
                 choice = int(input("\nEnter a number (1-6): "))
 
@@ -40,16 +41,16 @@ class LearningLogGenerator:
             else:
                 return choice
 
-
-
-
-
-
     def create_learning_log(self):
         """"""
         pass
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
-        self.main_menu()
-        self.get_main_menu_choice()
+        self.display_main_menu()
+        choice = self.get_main_menu_choice()
+
+        if choice == 1:
+            self.create_learning_log()
+
+
