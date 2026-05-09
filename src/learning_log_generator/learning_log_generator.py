@@ -1,4 +1,6 @@
-import sys
+import json
+
+from config import LOG_TEMPLATE_PATH
 
 
 class LearningLogGenerator:
@@ -41,8 +43,9 @@ class LearningLogGenerator:
                 return choice
 
     def create_learning_log(self):
-        """"""
-        pass
+        """Read from .md template, fill in, and then save a new log entry."""
+        with open("r", LOG_TEMPLATE_PATH, encoding="utf-8") as file:
+            json.load(file)
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
@@ -51,5 +54,7 @@ class LearningLogGenerator:
 
         if choice == 1:
             self.create_learning_log()
+        if choice == 2:
+            ...
 
 
