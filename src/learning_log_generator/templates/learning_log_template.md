@@ -1,4 +1,4 @@
-# Python Learning Log - {Date}
+# Python Learning Log - {date}
 
 
 ## Topic/Goal
