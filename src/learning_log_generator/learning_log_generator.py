@@ -44,8 +44,7 @@ class LearningLogGenerator:
 
     def create_learning_log(self):
         """Read from .md template, fill in, and then save a new log entry."""
-        with open("r", LOG_TEMPLATE_PATH, encoding="utf-8") as file:
-            json.load(file)
+        ...
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
