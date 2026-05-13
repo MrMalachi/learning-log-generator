@@ -45,11 +45,26 @@ class LearningLogGenerator:
 
     def create_learning_log(self):
         """Read from .md template, fill in, and then save a new log entry."""
-        ...
+        LOGS_FOLDER.mkdir(parents=True, exist_ok=True)
+
+        today = datetime.now().strftime("%m-%d-%Y")
+        new_file_path = f"{LOGS_FOLDER}/learning_log{today}.md"
+
+        with open(LOG_TEMPLATE_PATH, "r", encoding="utf-8") as template_file:
+            template_content = template_file.read()
+
+        filled_content = template_content.replace("{date}", today)
+
+        try:
+            with open(new_file_path, "x", encoding="utf-8") as new_file:
+                new_file.write(filled_content)
+        except FileExistsError:
+            print(f"Action aborted: File {new_file_path} already exists! No data was overwritten.")
+        else:
+            print(f"Created a new learning log: {new_file_path}")
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
-        self.display_main_menu()
         choice = self.get_main_menu_choice()
 
         if choice == 1:
