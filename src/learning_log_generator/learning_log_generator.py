@@ -63,13 +63,26 @@ class LearningLogGenerator:
         else:
             print(f"Created a new learning log: {new_file_path}")
 
+    def display_saved_learning_logs(self):
+        """A neatly formatted display of all previously saved learning logs."""
+        print()
+        files = (item for item in LOGS_FOLDER.iterdir())
+
+        for index, file in enumerate(files, start=1):
+            with open(file, "r", encoding="utf-8") as learning_log:
+                print(f"{index}. {learning_log.name}")
+
+    def get_learning_log_choice(self):
+        """"""
+        ...
+
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
         choice = self.get_main_menu_choice()
 
         if choice == 1:
             self.create_learning_log()
-        if choice == 2:
-            ...
+        elif choice == 2:
+            self.display_saved_learning_logs()
 
 
