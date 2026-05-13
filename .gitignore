@@ -29,5 +29,5 @@ dist/
 *.egg-info/
 
 # Local Runtime Data
-data/*.json
+data/
 !data/sample_data.json
