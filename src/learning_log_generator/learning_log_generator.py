@@ -1,6 +1,7 @@
 import json
+from datetime import datetime
 
-from config import LOG_TEMPLATE_PATH
+from learning_log_generator.config import LOG_TEMPLATE_PATH, LOGS_FOLDER
 
 
 class LearningLogGenerator:
