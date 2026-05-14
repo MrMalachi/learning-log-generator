@@ -70,7 +70,26 @@ class LearningLogGenerator:
             with open(file, "r", encoding="utf-8") as learning_log:
                 print(f"{index}. {learning_log.name}")
 
-    def get_learning_log_choice(self):
+    def get_log_keyword(self):
+        """"""
+        keyword = input("\nSearch logs for: ")
+
+        return keyword
+
+    def search_logs_by_keyword(self, keyword):
+        """"""
+        matching_files = []
+
+        for file in LOGS_FOLDER.iterdir():
+            if file.is_file():
+                with open(file, "r", encoding="utf-8") as content:
+                    file_text = content.read().lower()
+                    if keyword.lower() in file_text:
+                        matching_files.append(file)
+
+        return matching_files
+
+    def display_matching_logs(self):
         """"""
         ...
 
