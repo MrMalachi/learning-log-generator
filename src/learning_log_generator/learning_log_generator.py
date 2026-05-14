@@ -101,5 +101,10 @@ class LearningLogGenerator:
             self.create_learning_log()
         elif choice == 2:
             self.display_saved_learning_logs()
+        elif choice == 3:
+            keyword = self.get_log_keyword()
+            self.search_logs_by_keyword(keyword)
+        elif choice == 4:
+            ...
 
 
