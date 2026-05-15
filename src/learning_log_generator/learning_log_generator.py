@@ -46,7 +46,7 @@ class LearningLogGenerator:
         LOGS_FOLDER.mkdir(parents=True, exist_ok=True)
 
         today = datetime.now().strftime("%m-%d-%Y")
-        new_file_path = f"{LOGS_FOLDER}/learning_log{today}.md"
+        new_file_path = LOGS_FOLDER / f"learning_log{today}.md"
 
         with open(LOG_TEMPLATE_PATH, "r", encoding="utf-8") as template_file:
             template_content = template_file.read()
