@@ -30,4 +30,4 @@ dist/
 
 # Local Runtime Data
 data/
-!data/logs
+!data/logs/
