@@ -80,7 +80,7 @@ class LearningLogGenerator:
         """"""
         matching_files = []
 
-        for file in LOGS_FOLDER.iterdir():
+        for file in LOGS_FOLDER.glob("*.md"):
             if file.is_file():
                 with open(file, "r", encoding="utf-8") as content:
                     file_text = content.read().lower()
