@@ -109,7 +109,8 @@ class LearningLogGenerator:
             self.display_saved_learning_logs()
         elif choice == 3:
             keyword = self.get_log_keyword()
-            self.search_logs_by_keyword(keyword)
+            matching_logs = self.search_logs_by_keyword(keyword)
+            self.display_matching_logs(matching_logs)
         elif choice == 4:
             ...
 
