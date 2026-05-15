@@ -57,9 +57,9 @@ class LearningLogGenerator:
             with open(new_file_path, "x", encoding="utf-8") as new_file:
                 new_file.write(filled_content)
         except FileExistsError:
-            print(f"Action aborted: File {new_file_path} already exists! No data was overwritten.")
+            print(f"Action aborted: File {new_file_path.name} already exists! No data was overwritten.")
         else:
-            print(f"Created a new learning log: {new_file_path}")
+            print(f"Created a new learning log: {new_file_path.name}")
 
     def display_saved_learning_logs(self):
         """A neatly formatted display of all previously saved learning logs."""
