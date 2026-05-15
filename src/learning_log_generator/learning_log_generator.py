@@ -77,20 +77,27 @@ class LearningLogGenerator:
 
     def search_logs_by_keyword(self, keyword):
         """"""
-        matching_files = []
+        matching_logs = []
 
         for file in LOGS_FOLDER.glob("*.md"):
             if file.is_file():
-                with open(file, "r", encoding="utf-8") as content:
-                    file_text = content.read().lower()
-                    if keyword.lower() in file_text:
-                        matching_files.append(file)
+                content = file.read_text(encoding="utf-8")
 
-        return matching_files
+                if keyword.lower() in content.lower():
+                    matching_logs.append(file)
 
-    def display_matching_logs(self):
+        return matching_logs
+
+    def display_matching_logs(self, matching_logs):
         """"""
-        ...
+        if not matching_logs:
+            print("\nNo matching logs found...")
+            return
+
+        print("\nMatching Learning Logs:")
+
+        for index, file in enumerate(matching_logs, start=1):
+            print(f"{index}. {file.name}")
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
