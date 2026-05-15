@@ -67,8 +67,7 @@ class LearningLogGenerator:
         files = (item for item in LOGS_FOLDER.iterdir())
 
         for index, file in enumerate(files, start=1):
-            with open(file, "r", encoding="utf-8") as learning_log:
-                print(f"{index}. {learning_log.name}")
+            print(f"{index}. {file.name}")
 
     def get_log_keyword(self):
         """"""
