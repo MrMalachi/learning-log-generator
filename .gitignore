@@ -30,4 +30,4 @@ dist/
 
 # Local Runtime Data
 data/
-!data/sample_data.json
+!data/logs
