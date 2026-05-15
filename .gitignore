@@ -29,5 +29,4 @@ dist/
 *.egg-info/
 
 # Local Runtime Data
-data/
 !data/logs/
