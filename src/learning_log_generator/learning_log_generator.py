@@ -70,13 +70,13 @@ class LearningLogGenerator:
             print(f"{index}. {file.name}")
 
     def get_log_keyword(self):
-        """"""
+        """Prompt user to enter a keyword to "search" for."""
         keyword = input("\nSearch logs for: ")
 
         return keyword
 
-    def search_logs_by_keyword(self, keyword):
-        """"""
+    def search_log_by_keyword(self, keyword):
+        """Return a list of learning logs matching the keyword."""
         matching_logs = []
 
         for file in LOGS_FOLDER.glob("*.md"):
@@ -89,7 +89,7 @@ class LearningLogGenerator:
         return matching_logs
 
     def display_matching_logs(self, matching_logs):
-        """"""
+        """Output matching logs found as a result of keyword."""
         if not matching_logs:
             print("\nNo matching logs found...")
             return
@@ -98,6 +98,16 @@ class LearningLogGenerator:
 
         for index, file in enumerate(matching_logs, start=1):
             print(f"{index}. {file.name}")
+
+    def get_learning_log_choice(self):
+        """Prompt user to enter an integer as their log choice & return it."""
+        choice = input("\nEnter the corresponding number of the learning log you want to edit: ")
+
+        return choice
+
+    def edit_learning_log(self):
+        """"""
+        pass
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
@@ -109,9 +119,12 @@ class LearningLogGenerator:
             self.display_saved_learning_logs()
         elif choice == 3:
             keyword = self.get_log_keyword()
-            matching_logs = self.search_logs_by_keyword(keyword)
+            matching_logs = self.search_log_by_keyword(keyword)
             self.display_matching_logs(matching_logs)
         elif choice == 4:
-            ...
+            print("\nList of Saved Learning Logs:")
+            self.display_saved_learning_logs()
+            self.get_learning_log_choice()
+
 
 
