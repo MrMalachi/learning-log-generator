@@ -19,7 +19,7 @@ class LearningLogGenerator:
             "\n============================================"
             "\n1. Create a new learning log"
             "\n2. View saved learning logs"
-            "\n3. Search learning logs by keyword"
+            "\n3. Search learning log by keyword"
             "\n4. Edit a learning log"
             "\n5. Delete a learning log"
             "\n6. Exit"
