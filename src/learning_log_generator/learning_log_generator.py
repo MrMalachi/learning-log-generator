@@ -18,11 +18,10 @@ class LearningLogGenerator:
             "\n          🪵 Learning Log Generator🪵            "
             "\n============================================"
             "\n1. Create a new learning log"
-            "\n2. View saved learning logs"
+            "\n2. View / Edit saved learning logs"
             "\n3. Search learning log by keyword"
-            "\n4. Edit a learning log"
-            "\n5. Delete a learning log"
-            "\n6. Exit"
+            "\n4. Delete a learning log"
+            "\n5. Exit"
         )
 
     def get_main_menu_choice(self):
