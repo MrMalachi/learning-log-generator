@@ -140,32 +140,26 @@ class LearningLogGenerator:
         for index, file in enumerate(matching_logs, start=1):
             print(f"{index}. {file.name}")
 
-    def get_learning_log_choice(self):
-        """Prompt user to enter an integer as their log choice & return it."""
-        choice = input("\nEnter the corresponding number of the learning log you want to edit: ")
-
-        return choice
-
-    def edit_learning_log(self):
-        """"""
-        pass
-
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
-        choice = self.get_main_menu_choice()
+        while True:
+            choice = self.get_main_menu_choice()
 
-        if choice == 1:
-            self.create_learning_log()
-        elif choice == 2:
-            self.display_saved_learning_logs()
-        elif choice == 3:
-            keyword = self.get_log_keyword()
-            matching_logs = self.search_log_by_keyword(keyword)
-            self.display_matching_logs(matching_logs)
-        elif choice == 4:
-            print("\nList of Saved Learning Logs:")
-            self.display_saved_learning_logs()
-            self.get_learning_log_choice()
+            if choice == 1:
+                self.create_learning_log()
+            elif choice == 2:
+                self.display_learning_logs()
+                if self.ask_to_edit_learning_log():
+                    edit_choice_index = self.get_learning_log_choice()
+                self.edit_learning_log(edit_choice_index)
+            elif choice == 3:
+                keyword = self.get_log_keyword()
+                matching_logs = self.search_log_by_keyword(keyword)
+                self.display_matching_logs(matching_logs)
+            elif choice == 4:
+                ...
+            elif choice == 5:
+                break
 
 
 
