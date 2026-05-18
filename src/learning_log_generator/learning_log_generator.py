@@ -56,17 +56,59 @@ class LearningLogGenerator:
             with open(new_file_path, "x", encoding="utf-8") as new_file:
                 new_file.write(filled_content)
         except FileExistsError:
-            print(f"Action aborted: File {new_file_path.name} already exists! No data was overwritten.")
+            print(f"Action aborted: File {new_file_path.name} already exists! "
+                  f"No data was overwritten.")
         else:
             print(f"Created a new learning log: {new_file_path.name}")
 
-    def display_saved_learning_logs(self):
+    def display_learning_logs(self):
         """A neatly formatted display of all previously saved learning logs."""
-        print()
+        print("\n   || Saved Learning Logs ||")
         files = (item for item in LOGS_FOLDER.iterdir())
 
         for index, file in enumerate(files, start=1):
             print(f"{index}. {file.name}")
+
+    def ask_to_edit_learning_log(self):
+        """Return boolean under the conditions the user enters 'y' or 'n'."""
+        while True:
+            choice = str(input("\nWould you like to edit a learning log? "
+                               "(y/n): ")).lower()
+
+            if choice == "y":
+                return True
+            elif choice == "n":
+                return False
+            else:
+                print("\nPlease enter 'y' for yes or 'n' for no...")
+
+    def get_learning_log_choice(self):
+        """
+        Prompt user to enter an integer as their log (file) choice, match the
+        interpreter index, and then return it.
+        """
+        file_count = 0
+
+        for _ in LOGS_FOLDER.iterdir():
+            file_count += 1
+
+        while True:
+            try:
+                edit_choice = int(input("\nEnter the corresponding number of "
+                                        "the learning log you want to edit: "))
+                edit_choice_index = edit_choice - 1
+
+                if edit_choice_index not in range(file_count):
+                    print("\nPlease provide a number within range. Try again...")
+                    continue
+            except ValueError:
+                print("\nPlease enter a number...")
+            else:
+                return edit_choice_index
+
+    def edit_learning_log(self, edit_choice_index):
+        """"""
+        ...
 
     def get_log_keyword(self):
         """Prompt user to enter a keyword to "search" for."""
