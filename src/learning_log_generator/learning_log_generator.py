@@ -88,7 +88,7 @@ class LearningLogGenerator:
         # saved_logs = []
         # No need for an empty list because Python builds it below...
 
-        saved_logs = list(LOGS_FOLDER.iterdir())  # List comprehension.
+        saved_logs = list(LOGS_FOLDER.iterdir())  # Type casting.
         # for file in LOGS_FOLDER.iterdir():
             # saved_logs.append(file)
 
@@ -159,7 +159,9 @@ class LearningLogGenerator:
                 self.display_learning_logs()
                 if self.ask_to_edit_learning_log():
                     selected_learning_log = self.get_learning_log_choice()
-                self.edit_learning_log(selected_learning_log)
+
+                    if selected_learning_log is not None:
+                        self.edit_learning_log(selected_learning_log)
             elif choice == 3:
                 keyword = self.get_log_keyword()
                 matching_logs = self.search_log_by_keyword(keyword)
@@ -168,6 +170,5 @@ class LearningLogGenerator:
                 ...
             elif choice == 5:
                 break
-
 
 
