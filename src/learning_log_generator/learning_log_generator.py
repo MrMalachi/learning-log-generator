@@ -146,7 +146,7 @@ class LearningLogGenerator:
 
     def edit_learning_log(self, selected_learning_log):
         """"""
-
+        self.open_learning_log(selected_learning_log)
 
     def get_log_keyword(self):
         """Prompt user to enter a keyword to "search" for."""
