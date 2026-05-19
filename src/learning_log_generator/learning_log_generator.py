@@ -158,8 +158,8 @@ class LearningLogGenerator:
             elif choice == 2:
                 self.display_learning_logs()
                 if self.ask_to_edit_learning_log():
-                    edit_choice_index = self.get_learning_log_choice()
-                self.edit_learning_log(edit_choice_index)
+                    selected_learning_log = self.get_learning_log_choice()
+                self.edit_learning_log(selected_learning_log)
             elif choice == 3:
                 keyword = self.get_log_keyword()
                 matching_logs = self.search_log_by_keyword(keyword)
