@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from learning_log_generator.config import LOG_TEMPLATE_PATH, LOGS_FOLDER
 
 
@@ -56,10 +57,10 @@ class LearningLogGenerator:
             with open(new_file_path, "x", encoding="utf-8") as new_file:
                 new_file.write(filled_content)
         except FileExistsError:
-            print(f"Action aborted: File {new_file_path.name} already exists! "
+            print(f"\nAction aborted: File {new_file_path.name} already exists! "
                   f"No data was overwritten.")
         else:
-            print(f"Created a new learning log: {new_file_path.name}")
+            print(f"\nCreated a new learning log: {new_file_path.name}")
 
     def display_learning_logs(self):
         """A neatly formatted display of all previously saved learning logs."""
@@ -83,30 +84,37 @@ class LearningLogGenerator:
                 print("\nPlease enter 'y' for yes or 'n' for no...")
 
     def get_learning_log_choice(self):
-        """
-        Prompt user to enter an integer as their log (file) choice, match the
-        interpreter index, and then return it.
-        """
-        file_count = 0
+        """"""
+        # saved_logs = []
+        # No need for an empty list because Python builds it below...
 
-        for _ in LOGS_FOLDER.iterdir():
-            file_count += 1
+        saved_logs = list(LOGS_FOLDER.iterdir())  # List comprehension.
+        # for file in LOGS_FOLDER.iterdir():
+            # saved_logs.append(file)
+
+        # Prevent the program from continuing and asking the user to choose a
+        # file where there are no files available.
+        if not saved_logs:
+            print("No learning logs found.")
+            return None
 
         while True:
             try:
-                edit_choice = int(input("\nEnter the corresponding number of "
+                edit_choice = int(input("\nEnter the corresponding number to "
                                         "the learning log you want to edit: "))
-                edit_choice_index = edit_choice - 1
-
-                if edit_choice_index not in range(file_count):
-                    print("\nPlease provide a number within range. Try again...")
-                    continue
             except ValueError:
-                print("\nPlease enter a number...")
-            else:
-                return edit_choice_index
+                print("\nPlease enter a number. Try again...")
+                continue
 
-    def edit_learning_log(self, edit_choice_index):
+            if edit_choice < 1 or edit_choice > len(saved_logs):
+                print("\nPlease enter a number within range...")
+                continue
+
+            else:
+                selected_learning_log = saved_logs[edit_choice - 1]
+                return selected_learning_log
+
+    def edit_learning_log(self, selected_learning_log):
         """"""
         ...
 
