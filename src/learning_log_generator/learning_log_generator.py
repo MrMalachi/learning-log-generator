@@ -61,10 +61,33 @@ class LearningLogGenerator:
             with open(new_file_path, "x", encoding="utf-8") as new_file:
                 new_file.write(filled_content)
         except FileExistsError:
-            print(f"\nAction aborted: File {new_file_path.name} already exists! "
-                  f"No data was overwritten.")
+            print(
+                f"\nAction aborted: File {new_file_path.name} already exists! "
+                  f"Opening the existing file instead."
+            )
+            self.open_learning_log(new_file_path)
         else:
             print(f"\nCreated a new learning log: {new_file_path.name}")
+            self.open_learning_log(new_file_path)
+
+    def open_learning_log(self, file_path):
+        """Open a file using the user's operating system."""
+        path = Path(file_path)
+
+        if not path.exists():
+            print("File does not exist.")
+            return
+
+        system = platform.system()
+
+        if system == "Darwin":
+            subprocess.run(["open", str(path)])
+        elif system == "Windows":
+            os.startfile(str(path))
+        elif system == "Linux":
+            subprocess.run(["xdg-open", str(path)])
+        else:
+            print("Sorry, your operating system is not supported.")
 
     def display_learning_logs(self):
         """A neatly formatted display of all previously saved learning logs."""
@@ -77,8 +100,9 @@ class LearningLogGenerator:
     def ask_to_edit_learning_log(self):
         """Return boolean under the conditions the user enters 'y' or 'n'."""
         while True:
-            choice = str(input("\nWould you like to edit a learning log? "
-                               "(y/n): ")).lower()
+            choice = str(input(
+                "\nWould you like to edit a learning log? (y/n): "
+            )).lower()
 
             if choice == "y":
                 return True
@@ -104,8 +128,10 @@ class LearningLogGenerator:
 
         while True:
             try:
-                edit_choice = int(input("\nEnter the corresponding number to "
-                                        "the learning log you want to edit: "))
+                edit_choice = int(input(
+                    "\nEnter the corresponding number to the learning log you "
+                    "want to edit: "
+                ))
             except ValueError:
                 print("\nPlease enter a number. Try again...")
                 continue
@@ -120,7 +146,7 @@ class LearningLogGenerator:
 
     def edit_learning_log(self, selected_learning_log):
         """"""
-        ...
+
 
     def get_log_keyword(self):
         """Prompt user to enter a keyword to "search" for."""
