@@ -2,7 +2,7 @@
 
 
 ## Topic/Goal
-* Create a platform-agnostic method that opens a newly created file and a file 
+* Create a platform-agnostic method that opens a newly created file and opens a file when wanting to edit a learning log 
 
 ## What I Practiced/Built
 
