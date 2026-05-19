@@ -1,5 +1,9 @@
 from datetime import datetime
+import os
+import platform
+import subprocess
 
+from pathlib import Path
 from learning_log_generator.config import LOG_TEMPLATE_PATH, LOGS_FOLDER
 
 
