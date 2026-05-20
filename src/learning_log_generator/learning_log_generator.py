@@ -91,12 +91,17 @@ class LearningLogGenerator:
         else:
             print("Sorry, your operating system is not supported.")
 
-    def display_learning_logs(self):
+    def get_saved_learning_logs(self):
+        """Build the saved logs list for reusability."""
+        saved_logs = list(LOGS_FOLDER.glob("*.md"))
+
+        return saved_logs
+
+    def display_learning_logs(self, saved_logs):
         """A neatly formatted display of all previously saved learning logs."""
         print("\n   || Saved Learning Logs ||")
-        files = (item for item in LOGS_FOLDER.iterdir())
 
-        for index, file in enumerate(files, start=1):
+        for index, file in enumerate(saved_logs, start=1):
             print(f"{index}. {file.name}")
 
     def ask_to_edit_learning_log(self):
