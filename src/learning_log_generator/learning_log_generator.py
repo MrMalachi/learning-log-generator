@@ -134,8 +134,7 @@ class LearningLogGenerator:
         while True:
             try:
                 edit_choice = int(input(
-                    "\nEnter the corresponding number to the learning log you "
-                    "want to edit: "
+                    "\nEnter the corresponding number to the learning log: "
                 ))
             except ValueError:
                 print("\nPlease enter a number. Try again...")
