@@ -4,6 +4,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
+from send2trash import send2trash
 
 from learning_log_generator.config import LOG_TEMPLATE_PATH, LOGS_FOLDER
 
