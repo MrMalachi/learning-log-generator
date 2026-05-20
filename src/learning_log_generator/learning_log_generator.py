@@ -156,9 +156,17 @@ class LearningLogGenerator:
 
     def get_log_keyword(self):
         """Prompt user to enter a keyword to "search" for."""
-        keyword = input("\nSearch logs for: ")
+        while True:
+            try:
+                keyword = input("\nSearch logs for: ")
 
-        return keyword
+                if keyword == "":
+                    print("\nNo keyword was entered! Try again...")
+                    continue
+            except AttributeError as e:
+                print(f"Debugging log - Attribute missing {e}")
+            else:
+                return keyword
 
     def search_log_by_keyword(self, keyword):
         """Return a list of learning logs matching the keyword."""
