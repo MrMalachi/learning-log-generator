@@ -182,9 +182,13 @@ class LearningLogGenerator:
         for index, file in enumerate(matching_logs, start=1):
             print(f"{index}. {file.name}")
 
-    def delete_learning_log(self):
-        """"""
+    def delete_learning_log(self, selected_learning_log):
+        """
+        Use imported 3rd party module to send file to trash instead of
+        permanently deleting it.
+        """
 
+        send2trash(selected_learning_log)
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
@@ -205,7 +209,11 @@ class LearningLogGenerator:
                 matching_logs = self.search_log_by_keyword(keyword)
                 self.display_matching_logs(matching_logs)
             elif choice == 4:
-                ...
+                self.display_learning_logs()
+                selected_learning_log = self.get_learning_log_choice()
+
+                if selected_learning_log is not None:
+                    self.delete_learning_log(selected_learning_log)
             elif choice == 5:
                 break
 
