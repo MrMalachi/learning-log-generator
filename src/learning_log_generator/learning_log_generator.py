@@ -1,9 +1,10 @@
-from datetime import datetime
 import os
 import platform
 import subprocess
-
+from datetime import datetime
 from pathlib import Path
+
+
 from learning_log_generator.config import LOG_TEMPLATE_PATH, LOGS_FOLDER
 
 
@@ -112,7 +113,7 @@ class LearningLogGenerator:
                 print("\nPlease enter 'y' for yes or 'n' for no...")
 
     def get_learning_log_choice(self):
-        """"""
+        """Return an indexed file from a list specified by the user."""
         # saved_logs = []
         # No need for an empty list because Python builds it below...
 
@@ -145,7 +146,9 @@ class LearningLogGenerator:
                 return selected_learning_log
 
     def edit_learning_log(self, selected_learning_log):
-        """"""
+        """
+        Call method to open specified file by passing parameter as an argument.
+        """
         self.open_learning_log(selected_learning_log)
 
     def get_log_keyword(self):
@@ -177,6 +180,10 @@ class LearningLogGenerator:
 
         for index, file in enumerate(matching_logs, start=1):
             print(f"{index}. {file.name}")
+
+    def delete_learning_log(self):
+        """"""
+
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
