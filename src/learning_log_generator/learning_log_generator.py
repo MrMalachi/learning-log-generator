@@ -99,7 +99,11 @@ class LearningLogGenerator:
 
     def display_learning_logs(self, saved_logs):
         """A neatly formatted display of all previously saved learning logs."""
-        print("\n   || Saved Learning Logs ||")
+        if not saved_logs:
+            print("No learning logs found.")
+            return None
+        else:
+            print("\n   || Saved Learning Logs ||")
 
         for index, file in enumerate(saved_logs, start=1):
             print(f"{index}. {file.name}")
