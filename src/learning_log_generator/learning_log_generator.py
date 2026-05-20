@@ -187,7 +187,6 @@ class LearningLogGenerator:
         Use imported 3rd party module to send file to trash instead of
         permanently deleting it.
         """
-
         send2trash(selected_learning_log)
 
     def run_learning_log_generator(self):
