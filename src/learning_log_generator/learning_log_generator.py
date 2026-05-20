@@ -111,9 +111,9 @@ class LearningLogGenerator:
     def ask_to_edit_learning_log(self):
         """Return boolean under the conditions the user enters 'y' or 'n'."""
         while True:
-            choice = str(input(
+            choice = input(
                 "\nWould you like to edit a learning log? (y/n): "
-            )).lower()
+            ).strip().lower()
 
             if choice == "y":
                 return True
