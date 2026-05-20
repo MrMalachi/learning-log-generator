@@ -188,6 +188,7 @@ class LearningLogGenerator:
         permanently deleting it.
         """
         send2trash(selected_learning_log)
+        print(f"Moved {selected_learning_log.name} to trash.")  # Confirmation
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
@@ -215,5 +216,3 @@ class LearningLogGenerator:
                     self.delete_learning_log(selected_learning_log)
             elif choice == 5:
                 break
-
-
