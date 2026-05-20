@@ -36,9 +36,9 @@ class LearningLogGenerator:
         while True:
             self.display_main_menu()  # Redisplay menu every time if invalid input.
             try:
-                choice = int(input("\nEnter a number (1-6): "))
+                choice = int(input("\nEnter a number (1-5): "))
 
-                if choice < 1 or choice > 6:
+                if choice < 1 or choice > 5:
                     print("Please enter a valid number...")
                     continue
 
