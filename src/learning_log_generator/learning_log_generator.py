@@ -118,14 +118,8 @@ class LearningLogGenerator:
             else:
                 print("\nPlease enter 'y' for yes or 'n' for no...")
 
-    def get_learning_log_choice(self):
+    def get_learning_log_choice(self, saved_logs):
         """Return an indexed file from a list specified by the user."""
-        # saved_logs = []
-        # No need for an empty list because Python builds it below...
-
-        saved_logs = list(LOGS_FOLDER.iterdir())  # Type casting.
-        # for file in LOGS_FOLDER.iterdir():
-            # saved_logs.append(file)
 
         # Prevent the program from continuing and asking the user to choose a
         # file where there are no files available.
