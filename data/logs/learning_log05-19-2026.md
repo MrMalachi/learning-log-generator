@@ -28,4 +28,5 @@
   * It saves A LOT of time, making coding extremely efficient
 
 ## Next Step
-* Create method(s) for deleting a learning log (file)
+* Fix IDE being upset highlighting yellow text by adding type hints and learn 
+  what they are and how they are used
