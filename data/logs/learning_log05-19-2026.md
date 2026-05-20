@@ -23,6 +23,9 @@
       the public via GitHub public repository, therefore...
   * I learned the term "platform-agnostic"
   * Not all operating systems are able to handle files the same: macOS, Windows, Linux
+* METHOD REUSABILITY (MODULAR PROGRAMMING) IS AWESOME!!!
+  * A lot of the methods I created are reusable and I had no foreknowledge they would be
+  * It saves A LOT of time, making coding extremely efficient
 
 ## Next Step
 * Create method(s) for deleting a learning log (file)
