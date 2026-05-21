@@ -10,7 +10,7 @@ requires-python = ">3.10"
 authors = [
     { name = "MrMalachi", email = "brownmnb11@yahoo.com" }
 ]
-dependencies = ["send2trash>2.0.0"]
+dependencies = ["send2trash>2.0.0", "pyinstaller>6.0.0"]
 
 [project.scripts]
 # 'learning-log' runs main() function inside 'src/learning_log_generator/main.py'.
