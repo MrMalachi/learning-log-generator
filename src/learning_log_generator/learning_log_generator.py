@@ -254,4 +254,7 @@ class LearningLogGenerator:
                         )
                         continue
             elif choice == 5:
+                print(
+                    "\nThank you for using 🪵 Learning Log Generator🪵. Goodbye!"
+                )
                 break
