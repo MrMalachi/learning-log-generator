@@ -65,7 +65,7 @@ class LearningLogGenerator:
         except FileExistsError:
             print(
                 f"\nAction aborted: File {new_file_path.name} already exists! "
-                  f"Opening the existing file instead..."
+                f"Opening the existing file instead..."
             )
             self.open_learning_log(new_file_path)
         else:
