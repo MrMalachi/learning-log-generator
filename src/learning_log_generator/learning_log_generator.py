@@ -247,9 +247,7 @@ class LearningLogGenerator:
                 selected_learning_log = self.get_learning_log_choice(saved_logs)
 
                 if selected_learning_log is not None:
-                    confirm_action = self.confirm_delete_learning_log(selected_learning_log)
-
-                    if confirm_action == "y":
+                    if self.confirm_delete_learning_log(selected_learning_log):
                         self.delete_learning_log(selected_learning_log)
                     else:
                         print(
