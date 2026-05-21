@@ -210,8 +210,6 @@ class LearningLogGenerator:
             else:
                 print("\nInvalid input! Please enter 'y' for yes or 'n' for no.")
 
-
-
     def delete_learning_log(self, selected_learning_log):
         """
         Use imported 3rd party module to send file to trash instead of
