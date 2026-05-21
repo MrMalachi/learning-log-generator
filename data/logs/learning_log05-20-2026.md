@@ -29,4 +29,5 @@
 
 ## Next Step
 * Create a shareable executable `.exe` / `.app`
-* Turn Learning Log Generator script into GUI desktop app by learning & using `argparse`
+* Turn Learning Log Generator script into GUI desktop app by learning & using 
+  `argparse`
