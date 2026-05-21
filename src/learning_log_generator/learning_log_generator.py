@@ -218,7 +218,7 @@ class LearningLogGenerator:
         permanently deleting it.
         """
         send2trash(selected_learning_log)
-        print(f"Moved {selected_learning_log.name} to trash.")  # Confirmation
+        print(f"\nMoved {selected_learning_log.name} to trash.")  # Confirmation
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
