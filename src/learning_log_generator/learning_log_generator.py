@@ -203,12 +203,14 @@ class LearningLogGenerator:
             ).lower().strip()
 
             # Naturally filters out int, empty inputs, and miscellaneous text.
-            if confirm_action in ["y", "n"]:
-                break
+            if confirm_action == "y":
+                return True
+            elif confirm_action == "n":
+                return False
             else:
                 print("\nInvalid input! Please enter 'y' for yes or 'n' for no.")
 
-        return confirm_action
+
 
     def delete_learning_log(self, selected_learning_log):
         """
