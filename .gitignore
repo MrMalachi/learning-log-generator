@@ -23,9 +23,10 @@ secrets/
 .coverage
 htmlcov/
 
-# Build/Package Files
+# PyInstaller Generated Build/Package Files
 build/
 dist/
+*.spec
 *.egg-info/
 
 # Local Runtime Data
