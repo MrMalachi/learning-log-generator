@@ -192,6 +192,24 @@ class LearningLogGenerator:
         for index, file in enumerate(matching_logs, start=1):
             print(f"{index}. {file.name}")
 
+    def confirm_delete_learning_log(self, selected_learning_log):
+        """
+        Deleting is serious! Better safe than sorry in case user changes mind.
+        """
+        while True:
+            confirm_action = input(
+                f"\nAre you sure you want to delete "
+                f"{selected_learning_log.name}?! (y/n): "
+            ).lower().strip()
+
+            # Naturally filters out int, empty inputs, and miscellaneous text.
+            if confirm_action in ["y", "n"]:
+                break
+            else:
+                print("\nInvalid input! Please enter 'y' for yes or 'n' for no.")
+
+        return confirm_action
+
     def delete_learning_log(self, selected_learning_log):
         """
         Use imported 3rd party module to send file to trash instead of
