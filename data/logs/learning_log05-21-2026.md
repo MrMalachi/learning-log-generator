@@ -13,7 +13,7 @@
 * Created a new function within `config.py` file so that it acts as a helper function
 
 ## Key Takeaways
-* Being able to turn my script into a double-click file was easier than I though because all I had to do was:
+* Being able to turn my script into a double-click file was easier than I thought because all I had to do was:
   1. Create a `.command` file and name it whatever I wanted - `LearningLogGenerator.command`
   2. Within the `.command` file, write the following code:
      3. ```.commandline
@@ -23,7 +23,7 @@
         ./learning-log-generator
         ```
         * This basically runs the file using zsh shell, move the Terminal into the folder where the 
-          `LearningLogGenerator.command` file loves, and run the file `learning-log-generator` from the current folder
+          `LearningLogGenerator.command` file lives, and run the file `learning-log-generator` from the current folder
           which is `dist/learning-log-generator`... "Go to the folder where the launcher is, then run the executable in 
           that folder"
 * The `resource_path` function contains a conditional that looks at my system to see if it is running inside a bundled
