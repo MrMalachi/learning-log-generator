@@ -114,19 +114,6 @@ class LearningLogGenerator:
             else:
                 return keyword
 
-    def search_log_by_keyword(self, keyword):
-        """Return a list of learning logs matching the keyword."""
-        matching_logs = []
-
-        for file in LOGS_FOLDER.glob("*.md"):
-            if file.is_file():
-                content = file.read_text(encoding="utf-8")
-
-                if keyword.lower() in content.lower():
-                    matching_logs.append(file)
-
-        return matching_logs
-
     def display_matching_logs(self, matching_logs):
         """Output matching logs found as a result of keyword."""
         if not matching_logs:
@@ -182,7 +169,7 @@ class LearningLogGenerator:
                         self.edit_learning_log(selected_learning_log)
             elif choice == 3:
                 keyword = self.get_log_keyword()
-                matching_logs = self.search_log_by_keyword(keyword)
+                matching_logs = self.manager.search_log_by_keyword(keyword)
                 self.display_matching_logs(matching_logs)
             elif choice == 4:
                 saved_logs = self.manager.get_saved_learning_logs()
