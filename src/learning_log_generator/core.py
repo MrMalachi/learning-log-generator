@@ -81,5 +81,5 @@ class LearningLogManager:
         permanently deleting it.
         """
         send2trash(selected_learning_log)
-        print(f"\nMoved {selected_learning_log.name} to trash.")  # Confirmation
+        return selected_learning_log
 
