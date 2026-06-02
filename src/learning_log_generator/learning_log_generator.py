@@ -1,7 +1,4 @@
-from send2trash import send2trash
-
 from learning_log_generator.core import LearningLogManager
-from learning_log_generator.config import LOGS_FOLDER
 
 
 class LearningLogGenerator:
@@ -142,14 +139,6 @@ class LearningLogGenerator:
                 return False
             else:
                 print("\nInvalid input! Please enter 'y' for yes or 'n' for no.")
-
-    def delete_learning_log(self, selected_learning_log):
-        """
-        Use imported 3rd party module to send file to trash instead of
-        permanently deleting it.
-        """
-        send2trash(selected_learning_log)
-        print(f"\nMoved {selected_learning_log.name} to trash.")  # Confirmation
 
     def run_learning_log_generator(self):
         """The class' internal orchestrator."""
