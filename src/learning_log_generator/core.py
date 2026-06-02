@@ -60,3 +60,16 @@ class LearningLogManager:
 
         return saved_logs
 
+    def search_log_by_keyword(self, keyword):
+        """Return a list of learning logs matching the keyword."""
+        matching_logs = []
+
+        for file in LOGS_FOLDER.glob("*.md"):
+            if file.is_file():
+                content = file.read_text(encoding="utf-8")
+
+                if keyword.lower() in content.lower():
+                    matching_logs.append(file)
+
+        return matching_logs
+
