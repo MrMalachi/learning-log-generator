@@ -168,7 +168,8 @@ class LearningLogGenerator:
 
                 if selected_learning_log is not None:
                     if self.confirm_delete_learning_log(selected_learning_log):
-                        self.delete_learning_log(selected_learning_log)
+                        deleted_log = self.manager.delete_learning_log(selected_learning_log)
+                        print(f"\nMoved {deleted_log} to trash.")  # Confirmation)
                     else:
                         print(
                             f"\nNo problem, {selected_learning_log.name} was "
