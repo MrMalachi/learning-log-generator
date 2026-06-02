@@ -98,7 +98,7 @@ class LearningLogGenerator:
         """
         Call method to open specified file by passing parameter as an argument.
         """
-        self.open_learning_log(selected_learning_log)
+        self.manager.open_learning_log(selected_learning_log)
 
     def get_log_keyword(self):
         """Prompt user to enter a keyword to "search" for."""
@@ -170,7 +170,7 @@ class LearningLogGenerator:
             choice = self.get_main_menu_choice()
 
             if choice == 1:
-                self.create_learning_log()
+                self.manager.create_learning_log()
             elif choice == 2:
                 saved_logs = self.manager.get_saved_learning_logs()
                 self.display_learning_logs(saved_logs)
