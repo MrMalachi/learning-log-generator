@@ -93,12 +93,6 @@ class LearningLogGenerator:
         else:
             print("Sorry, your operating system is not supported.")
 
-    def get_saved_learning_logs(self):
-        """Build the saved logs list for reusability."""
-        saved_logs = list(LOGS_FOLDER.glob("*.md"))
-
-        return saved_logs
-
     def display_learning_logs(self, saved_logs):
         """A neatly formatted display of all previously saved learning logs."""
         if not saved_logs:
