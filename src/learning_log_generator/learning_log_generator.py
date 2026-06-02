@@ -222,7 +222,7 @@ class LearningLogGenerator:
             if choice == 1:
                 self.create_learning_log()
             elif choice == 2:
-                saved_logs = self.get_saved_learning_logs()
+                saved_logs = self.manager.get_saved_learning_logs()
                 self.display_learning_logs(saved_logs)
 
                 if self.ask_to_edit_learning_log():
@@ -235,7 +235,7 @@ class LearningLogGenerator:
                 matching_logs = self.search_log_by_keyword(keyword)
                 self.display_matching_logs(matching_logs)
             elif choice == 4:
-                saved_logs = self.get_saved_learning_logs()
+                saved_logs = self.manager.get_saved_learning_logs()
                 self.display_learning_logs(saved_logs)
 
                 selected_learning_log = self.get_learning_log_choice(saved_logs)
