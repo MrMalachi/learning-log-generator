@@ -146,7 +146,16 @@ class LearningLogGenerator:
             choice = self.get_main_menu_choice()
 
             if choice == 1:
-                self.manager.create_learning_log()
+                learning_log_path, was_created = self.manager.create_learning_log()
+
+                if was_created:
+                    print(
+                        f"\nCreated a new learning log: {learning_log_path.name}")
+                else:
+                    print(
+                        f"\nAction aborted: File {learning_log_path.name} already exists! "
+                        f"Opening the existing file instead..."
+                    )
             elif choice == 2:
                 saved_logs = self.manager.get_saved_learning_logs()
                 self.display_learning_logs(saved_logs)
