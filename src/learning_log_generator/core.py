@@ -47,14 +47,13 @@ class LearningLogManager:
             with open(new_file_path, "x", encoding="utf-8") as new_file:
                 new_file.write(filled_content)
         except FileExistsError:
-            print(
-                f"\nAction aborted: File {new_file_path.name} already exists! "
-                f"Opening the existing file instead..."
-            )
-            self.open_learning_log(new_file_path)
+            was_created = False
         else:
-            print(f"\nCreated a new learning log: {new_file_path.name}")
-            self.open_learning_log(new_file_path)
+            was_created = True
+
+        self.open_learning_log(new_file_path)
+
+        return new_file_path, was_created
 
     def get_saved_learning_logs(self):
         """Build the saved logs list for reusability."""
